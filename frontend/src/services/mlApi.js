@@ -7,24 +7,24 @@
  * To use a different model endpoint: add a new method and update the route in the API.
  */
 
-const BASE_URL = import.meta.env.VITE_ML_API_URL || 'http://localhost:8000'
+const BASE_URL = import.meta.env.VITE_ML_API_URL || 'https://eduinsights-base-repo.onrender.com'
 
 /**
  * POST /predict - Sends input features and returns prediction.
  * @param {Object} inputData - Object with feature keys matching your model's input
- * @returns {Promise<{prediction: *, confidence: number, label?: string}>}
+ * @returns {Promise<{prediction: number, label: string, confidence: number, probabilities?: Object}>}
  */
 export async function predict(inputData) {
   try {
     const res = await fetch(`${BASE_URL}/predict`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ features: inputData }),
+      body: JSON.stringify(inputData),
     })
 
     if (!res.ok) {
       const errBody = await res.json().catch(() => ({}))
-      throw new Error(errBody.detail || `ML API error: ${res.status} ${res.statusText}`)
+      throw new Error(errBody.error || errBody.message || `ML API error: ${res.status} ${res.statusText}`)
     }
 
     return await res.json()

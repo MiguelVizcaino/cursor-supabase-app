@@ -3,15 +3,42 @@
  * Purpose: CSS variables, resets, base typography.
  * Modify: Add theme colors, fonts, or utility classes here.
  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
-  --color-primary: #6366f1;
-  --color-bg: #f8fafc;
-  --color-surface: #ffffff;
-  --color-text: #1e293b;
-  --color-text-muted: #64748b;
-  --color-border: #e2e8f0;
-  --radius: 8px;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* Primary Colors */
+  --color-primary: #4F46E5;
+  --color-primary-light: #EEF2FF;
+  --color-primary-hover: #4338CA;
+  
+  /* Status Colors */
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+  
+  /* Background & Surface */
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-border: #E2E8F0;
+  
+  /* Text Colors */
+  --color-text: #1E293B;
+  --color-text-secondary: #64748B;
+  
+  /* Design System */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-h1: 28px;
+  --font-size-h2: 20px;
+  --font-size-h3: 16px;
+  --font-size-body: 14px;
+  --font-size-label: 12px;
+  --font-size-kpi: 36px;
 }
 
 * {
@@ -20,8 +47,30 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family);
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.5;
+  font-size: var(--font-size-body);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
 }

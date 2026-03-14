@@ -15,7 +15,7 @@ export default function KpiCard({ title, value, subtitle, icon, trend, color = '
         {icon && <span className={styles.icon}>{icon}</span>}
         <span className={styles.title}>{title}</span>
       </div>
-      <div className={styles.value} style={color ? { color: `var(--color-${color})` } : undefined}>
+      <div className={styles.value} data-color={color}>
         {value}
       </div>
       {(subtitle || trend != null) && (

@@ -7,9 +7,9 @@ import { Link, useLocation } from 'react-router-dom'
 import styles from './Sidebar.module.css'
 
 const ITEMS = [
-  { path: '/', label: 'Dashboard' },
-  { path: '/data', label: 'Data Explorer' },
-  { path: '/predict', label: 'Predictor' },
+  { path: '/', label: '📊 Dashboard', icon: '📊' },
+  { path: '/explorer', label: '🔍 Explorador', icon: '🔍' },
+  { path: '/predict', label: '🤖 Predictor ML', icon: '🤖' },
 ]
 
 export default function Sidebar() {
