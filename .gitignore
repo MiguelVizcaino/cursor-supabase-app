@@ -29,6 +29,9 @@ ml-api/venv/
 # Si quieres excluir model.pkl del repo, descomenta la siguiente línea:
 # ml-api/model/model.pkl
 
+# Cursor MCP (contiene API keys - no subir al repo)
+.cursor/mcp.json
+
 # IDE
 .idea/
 .vscode/

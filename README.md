@@ -45,7 +45,7 @@ Find URL and key in **Supabase Dashboard > Project Settings > API**.
 
 ### 4. Configure Cursor MCP
 
-Replace `YOUR_SUPABASE_PERSONAL_ACCESS_TOKEN_HERE` in `.cursor/mcp.json` with your token from [supabase.com/dashboard/account/tokens](https://supabase.com/dashboard/account/tokens). This lets Cursor AI interact with your Supabase project.
+Copy `.cursor/mcp.json.example` to `.cursor/mcp.json` and replace the API key placeholders with your own keys. The `mcp.json` file is in `.gitignore` to avoid exposing secrets.
 
 ### 5. Run locally
 
